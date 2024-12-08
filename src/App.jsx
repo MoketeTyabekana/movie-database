@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-    <h1>Mokete Tyabekana</h1>
+    <h1>Mokete Elias Tyabekana</h1>
     </>
   )
 }
