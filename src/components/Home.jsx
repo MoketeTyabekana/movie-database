@@ -32,7 +32,7 @@ function Home() {
       </div>
       <div className="mt-12 text-white text-xl ">
         <h2 className="search-results">Your Search Results Will Appear Below:</h2>
-        <div className="w-screen h-0.5 bg-orange-400 mt-4"></div>
+        <div className="w-screen h-0.5 bg-orange-400 mt-4 "></div>
       </div>
 
       <div className="results">
