@@ -4,7 +4,7 @@ import icon from '../assets/icon.png';
 function NavBar() {
   return (
     
-<nav className="bg-white border-gray-200 dark:bg-black">
+<nav className="bg-white border-gray-200 dark:bg-black ">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
     <a  className="flex items-center space-x-3 rtl:space-x-reverse">
     <img src={icon} alt="Logo" className='lg:w-8 sm:w-4'/>
