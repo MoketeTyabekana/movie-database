@@ -7,10 +7,10 @@ function NavBar() {
 <nav className="bg-white border-gray-200 dark:bg-black">
   <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
     <a  className="flex items-center space-x-3 rtl:space-x-reverse">
-    <img src={icon} alt="Logo" className='w-10'/>
-        <h1 className='text-white font-bold '><span className='text-orange-400'>EMT</span>Movies</h1>
+    <img src={icon} alt="Logo" className='lg:w-8 sm:w-4'/>
+        <h1 className='text-white font-bold lg:text-3xl'><span className='text-orange-400'>EMT</span>Movies</h1>
     </a>
-    <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+    <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-orange-400  dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
         <span className="sr-only">Open main menu</span>
         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" strokeLinejoin="round"  strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
