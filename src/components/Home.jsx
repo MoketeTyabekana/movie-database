@@ -25,7 +25,7 @@ function Home() {
             />
           </div>
 
-          <button className="w-full py-3 bg-orange-400 text-white rounded-full hover:bg-orange-600 transition-colors">
+          <button className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors">
             SEARCH
           </button>
         </div>
