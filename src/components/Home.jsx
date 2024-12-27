@@ -3,8 +3,8 @@ import { Search } from "lucide-react";
 
 function Home() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center px-4  bg-custom-gradient">
-      <div className=" bg-black p-7 rounded-2xl ">
+    <div className="h-screen flex flex-col  items-center justify-center px-4  bg-custom-gradient">
+      <div className=" bg-black p-7 pt-10 pb-10 rounded-2xl ">
         <div className="text-center mb-8 space-y-4">
           <h1 className="lg:text-5xl md:text-3xl sm:text-1xl font-bold">
             <span className="text-orange-400">
@@ -30,9 +30,13 @@ function Home() {
           </button>
         </div>
       </div>
-      <div className="mt-12 text-white text-xl">
-        <h2>Your Search Results Will Appear Below:</h2>
+      <div className="mt-12 text-white text-xl ">
+        <h2 className="search-results">Your Search Results Will Appear Below:</h2>
         <div className="w-screen h-0.5 bg-orange-400 mt-4"></div>
+      </div>
+
+      <div className="results">
+        
       </div>
     </div>
   );

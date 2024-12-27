@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-gradient': "linear-gradient(90deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3))",
+        'custom-gradient': "linear-gradient(-180deg, rgba(0,0,0,0.9), rgba(0,0,0,1)), url('https://i.ebayimg.com/images/g/BVMAAOSw1uNhenX7/s-l1600.jpg')",
       },
     },
   },
