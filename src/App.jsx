@@ -4,9 +4,6 @@ import NavBar from './components/NavBar';
 import Home from './components/Home';
 import FooterContainer from './components/FooterContainer';
 
-
-
-
 function App() {
 
   return (
