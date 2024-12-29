@@ -24,7 +24,7 @@ export default function FooterContainer() {
               <p className="text-sm mb-4">Follow Me</p>
               <div className="flex space-x-6">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/mokete-elias-tyabekana-88a22a143/"
                   aria-label="LinkedIn"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -33,7 +33,7 @@ export default function FooterContainer() {
                   <FaLinkedin className="text-lg" />
                 </a>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/ghost_emt"
                   aria-label="Twitter"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -42,7 +42,7 @@ export default function FooterContainer() {
                   <FaTwitter className="text-lg" />
                 </a>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/MoketeTyabekana"
                   aria-label="GitHub"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -51,7 +51,7 @@ export default function FooterContainer() {
                   <FaGithub className="text-lg" />
                 </a>
                 <a
-                  href="https://facebook.com"
+                  href="https://web.facebook.com/kayno.Eli.mokete"
                   aria-label="Facebook"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -60,7 +60,7 @@ export default function FooterContainer() {
                   <FaFacebook className="text-lg" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/eli.mokete/"
                   aria-label="Instagram"
                   target="_blank"
                   rel="noopener noreferrer"
