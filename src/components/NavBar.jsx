@@ -1,6 +1,7 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import icon from '../assets/icon.png';
+import FooterContainer from './FooterContainer';
 
 function NavBar() {
   return (
@@ -69,7 +70,10 @@ function NavBar() {
           </div>
         </div>
       </nav>
-      <Outlet />
+     <main>
+     <Outlet />
+     </main>
+     <FooterContainer/>
     </>
   );
 }
