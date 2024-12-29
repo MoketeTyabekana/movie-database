@@ -1,11 +1,10 @@
-import './App.css';
+import "./App.css";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from'./pages/Home';
-import Favourites from'./pages/Favourites';
-import About from './pages/About';
-
+import Home from "./pages/Home";
+import Favourites from "./pages/Favourites";
+import About from "./pages/About";
 
 export default function App() {
   return (
@@ -13,8 +12,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<NavBar />}>
           <Route index element={<Home />} />
-          <Route path="Favourites" element={<Favourites />} />
-          <Route path="About" element={<About />} />
+          <Route path="favourites" element={<Favourites />} />
+          <Route path="about" element={<About />} />
           {/* <Route path="*" element={<NoPage />} /> */}
         </Route>
       </Routes>
@@ -22,5 +21,5 @@ export default function App() {
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<App />);
