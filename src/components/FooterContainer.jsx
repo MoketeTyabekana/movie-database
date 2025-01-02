@@ -9,11 +9,11 @@ import React from "react";
 
 export default function FooterContainer() {
   return (
-    <footer className="bg-black text-white py-8 px-4  mx-auto p-5 border-t-2 border-gray-900">
+    <footer className="bg-black text-white py-8 px-4 sm:flex-auto  mx-auto p-5 border-t-2 border-gray-900">
      
         <div className=" pl-20 pr-20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0 flex gap-5 items-center ">
+            <div className="mb-4 md:mb-0 flex gap-5 items-center sm:flex-auto">
               <p>EMTMovies©2024</p>
               <p className="text-sm">
                 Developed By :{" "}
