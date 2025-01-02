@@ -1,18 +1,25 @@
+import "./App.css";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Home from "./pages/Home";
+import Favourites from "./pages/Favourites";
+import About from "./pages/About";
 
-import './App.css';
-import NavBar from './components/NavBar';
-import Home from './components/Home';
-import FooterContainer from './components/FooterContainer';
-
-function App() {
-
+export default function App() {
   return (
-    <>
-    <NavBar/>
-    <Home/>
-   <FooterContainer/>
-    </>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<NavBar />}>
+          <Route index element={<Home />} />
+          <Route path="favourites" element={<Favourites />} />
+          <Route path="about" element={<About />} />
+          {/* <Route path="*" element={<NoPage />} /> */}
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
