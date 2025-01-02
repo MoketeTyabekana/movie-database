@@ -45,7 +45,7 @@ function NavBar() {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded hover:text-orange-400 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                  className="block py-2 px-3 text-white hover:text-orange-400 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
                 >
                   Home
                 </Link>
@@ -53,7 +53,7 @@ function NavBar() {
               <li>
                 <Link
                   to="/favourites"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
+                  className="block py-2 px-3 text-white rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
                 >
                   Favourites
                 </Link>
@@ -61,7 +61,7 @@ function NavBar() {
               <li>
                 <Link
                   to="/about"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
+                  className="block py-2 px-3 text-white rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
                 >
                   About Me
                 </Link>
