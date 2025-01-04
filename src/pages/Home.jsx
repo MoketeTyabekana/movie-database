@@ -84,7 +84,10 @@ function Home({ favorites, setSelectedMovie }) {
             </h1>
           </div>
           <div className="w-full max-w-2xl ">
-            <form onSubmit={searchMovies} className="max-w-3xl mx-auto mb-12 space-y-4">
+            <form
+              onSubmit={searchMovies}
+              className="max-w-3xl mx-auto mb-12 space-y-4"
+            >
               <div className="relative">
                 <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
                 <input
@@ -105,18 +108,18 @@ function Home({ favorites, setSelectedMovie }) {
           </div>
         </div>
         <div className="mt-12 text-white text-xl ">
-          <h2 className="search-results text-center mb-10">
+          <h2 className="search-results text-center mb-10 ">
             Your Search Results Will Appear Below:
           </h2>
-          <div className="w-screen  bg-black text-white py-8 px-4 sm:flex-auto  mx-auto p-5 border-t-2 border-gray-900"></div>
         </div>
-
 
         {movies.length > 0 && (
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-white">
+            <h3 className="text-2xl font-bold mb-6 text-white md:m-20">
               Search Results
             </h3>
+            {loading && <div className="text-center text-gray-400">Loading...</div>}
+            {error && <div className="text-center text-red-500">{error}</div>}
             <MovieGrid movies={movies} />
           </div>
         )}
