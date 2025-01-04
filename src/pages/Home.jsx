@@ -41,14 +41,14 @@ function Home({ favorites, setSelectedMovie }) {
           </div>
         </div>
         <div className="mt-12 text-white text-xl ">
-          <h2 className="search-results text-center">
+          <h2 className="search-results text-center mb-10">
             Your Search Results Will Appear Below:
           </h2>
-          <div className="w-screen h-0.5 bg-orange-400 mt-4 "></div>
+          <div className="w-screen  bg-black text-white py-8 px-4 sm:flex-auto  mx-auto p-5 border-t-2 border-gray-900"></div>
         </div>
 
         <div className="mb-12">
-          <h3 className="text-2xl font-bold mb-6 text-white">Latest Movies</h3>
+          <h3 className="text-2xl font-bold mb-6 text-white ">Latest Movies</h3>
           {loading && (
             <div className="text-center text-gray-400">Loading...</div>
           )}
