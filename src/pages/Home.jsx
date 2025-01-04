@@ -12,6 +12,63 @@ function Home({ favorites, setSelectedMovie }) {
 
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
+
+ 
+
+
+  // Search
+  const searchMovies = async (e) => {
+    e.preventDefault();
+    if (!searchQuery.trim()) return;
+
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(
+        `https://www.omdbapi.com/?s=${encodeURIComponent(searchQuery)}&apikey=${API_KEY}`
+      );
+      const data = await response.json();
+
+      if (data.Response === "True") {
+        const detailedMovies = await Promise.all(
+          data.Search.map(async (movie) => {
+            const detailResponse = await fetch(
+              `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
+            );
+            return await detailResponse.json();
+          })
+        );
+        setMovies(detailedMovies);
+      } else {
+        const words = searchQuery.split(" ");
+        const similarResponse = await fetch(
+          `https://www.omdbapi.com/?s=${encodeURIComponent(words[0])}&apikey=${API_KEY}`
+        );
+        const similarData = await similarResponse.json();
+
+        if (similarData.Response === "True") {
+          const detailedSimilarMovies = await Promise.all(
+            similarData.Search.map(async (movie) => {
+              const detailResponse = await fetch(
+                `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
+              );
+              return await detailResponse.json();
+            })
+          );
+          setMovies(detailedSimilarMovies);
+        } else {
+          setError("No movies found. Try a different search term.");
+        }
+      }
+    } catch (err) {
+      setError("An error occurred while fetching movies. Please try again.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <div className="h-screen flex flex-col  items-center justify-center px-4  bg-custom-gradient">
@@ -36,7 +93,7 @@ function Home({ favorites, setSelectedMovie }) {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for movies"
-                className="w-full px-12 py-3 text-center rounded-full bg-white-500 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                className="w-full px-12 py-3 text-center rounded-full bg-white-500 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
             <button type="submit" className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors">
