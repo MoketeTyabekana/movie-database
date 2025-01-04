@@ -1,8 +1,21 @@
 import React from "react";
 import { Search } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import { BiSearch } from "react-icons/bi";
+import MovieGrid from "./MovieGrid";
 
 
-function Home() {
+function Home({ favorites, setSelectedMovie }) {
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [movies, setMovies] = useState([]);
+  const [latestMovies, setLatestMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  
+  const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
+
   return (
 <>
 <div className="h-screen flex flex-col  items-center justify-center px-4  bg-custom-gradient">
