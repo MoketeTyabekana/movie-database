@@ -1,6 +1,6 @@
 import React from "react";
 import { Search } from "lucide-react";
-import FooterContainer from "../components/FooterContainer"
+
 
 function Home() {
   return (
@@ -8,7 +8,7 @@ function Home() {
 <div className="h-screen flex flex-col  items-center justify-center px-4  bg-custom-gradient">
    <div className=" bg-black bg-opacity-50 p-7 pt-10 pb-10 rounded-2xl">
      <div className="text-center mb-8 space-y-4">
-       <h1 className="lg:text-5xl md:text-3xl sm:text-1xl font-bold">
+       <h1 className="lg:text-5xl md:text-3xl sm:text-1xl font-bold leading-relaxed">
          <span className="text-orange-400">
            What Would You Like To Watch
          </span>
