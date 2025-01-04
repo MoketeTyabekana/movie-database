@@ -1,9 +1,7 @@
-import React from "react";
-import { Search } from "lucide-react";
 import React, { useState, useEffect } from "react";
+import { Search } from "lucide-react";
 import PropTypes from "prop-types";
-import { BiSearch } from "react-icons/bi";
-import MovieGrid from "./MovieGrid";
+import MovieGrid from "../components/MovieGrid";
 
 
 function Home({ favorites, setSelectedMovie }) {
@@ -48,9 +46,20 @@ function Home({ favorites, setSelectedMovie }) {
      <h2 className="search-results text-center">Your Search Results Will Appear Below:</h2>
      <div className="w-screen h-0.5 bg-orange-400 mt-4 "></div>
    </div>
-   <div className="results">
-     
-   </div>
+
+   <div className="mb-12">
+   <h3 className="text-2xl font-bold mb-6 text-white">Latest Movies</h3>
+   {loading && <div className="text-center text-gray-400">Loading...</div>}
+   {error && <div className="text-center text-red-500">{error}</div>}
+   {!loading && !error && (
+     <MovieGrid 
+       movies={latestMovies}
+       favorites={favorites}
+       onMovieClick={setSelectedMovie}
+     />
+   )}
+ </div>
+
  </div>
 
  </>
