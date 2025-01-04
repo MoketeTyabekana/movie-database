@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AiFillStar } from 'react-icons/ai';
 
-function MovieCard({ movie, isFavorite, onClick }) {
+function MovieCard({ movie}) {
   return (
     <div 
    className="bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-transform hover:scale-105"
-   onClick={onClick}
+  
  > 
   <div className="relative">
     <img
@@ -15,11 +15,11 @@ function MovieCard({ movie, isFavorite, onClick }) {
       className="w-full h-[300px] object-cover"
     />
     
-    {isFavorite && (
-      <div className="absolute top-2 right-2">
-        <AiFillStar className="w-6 h-6 text-[#FF8C00]" />
-      </div>
-    )}
+   
+   
+   
+   
+   
   </div>
   <div className="p-4">
     <h3 className="text-sm font-bold truncate mb-1 text-white">{movie.Title}</h3>

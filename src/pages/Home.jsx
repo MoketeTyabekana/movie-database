@@ -12,55 +12,55 @@ function Home({ favorites, setSelectedMovie }) {
 
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
+  //  Latest Movies
 
-//  Latest Movies
+  useEffect(() => {
+    fetchLatestMovies();
+  }, []);
 
-useEffect(() => {
-  fetchLatestMovies();
-}, []);
+  const fetchLatestMovies = async () => {
+    setLoading(true);
+    setError(null);
 
-const fetchLatestMovies = async () => {
-  setLoading(true);
-  setError(null);
+    try {
+      const currentYear = new Date().getFullYear();
+      const response = await fetch(
+        `https://www.omdbapi.com/?s=Avengers&y=${currentYear}&type=movie&apikey=${API_KEY}`
+      ); // Replace "Avengers" with a generic/popular title for better results
+      const data = await response.json();
 
-  try {
-    const currentYear = new Date().getFullYear();
-    const response = await fetch(
-      `https://www.omdbapi.com/?s=Avengers&y=${currentYear}&type=movie&apikey=${API_KEY}`
-    ); // Replace "Avengers" with a generic/popular title for better results
-    const data = await response.json();
+      if (data.Response === "True" && data.Search?.length > 0) {
+        // Fetch movie details for the first 10 movies
+        const detailedMovies = await Promise.all(
+          data.Search.slice(0, 10).map(async (movie) => {
+            const detailResponse = await fetch(
+              `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
+            );
+            const detailData = await detailResponse.json();
+            if (detailData.Response === "True") {
+              return detailData;
+            } else {
+              console.warn(`Failed to fetch details for movie: ${movie.Title}`);
+              return null; // Handle failures gracefully
+            }
+          })
+        );
 
-    if (data.Response === "True" && data.Search?.length > 0) {
-      // Fetch movie details for the first 10 movies
-      const detailedMovies = await Promise.all(
-        data.Search.slice(0, 10).map(async (movie) => {
-          const detailResponse = await fetch(
-            `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
-          );
-          const detailData = await detailResponse.json();
-          if (detailData.Response === "True") {
-            return detailData;
-          } else {
-            console.warn(`Failed to fetch details for movie: ${movie.Title}`);
-            return null; // Handle failures gracefully
-          }
-        })
+        // Filter out any null results from failed fetches
+        const validMovies = detailedMovies.filter((movie) => movie !== null);
+        setLatestMovies(validMovies);
+      } else {
+        setError(data.Error || "Failed to fetch latest movies.");
+      }
+    } catch (err) {
+      setError(
+        "An error occurred while fetching latest movies. Please try again."
       );
-
-      // Filter out any null results from failed fetches
-      const validMovies = detailedMovies.filter((movie) => movie !== null);
-      setLatestMovies(validMovies);
-    } else {
-      setError(data.Error || "Failed to fetch latest movies.");
+      console.error("Fetch Error:", err);
+    } finally {
+      setLoading(false);
     }
-  } catch (err) {
-    setError("An error occurred while fetching latest movies. Please try again.");
-    console.error("Fetch Error:", err);
-  } finally {
-    setLoading(false);
-  }
-};
-
+  };
 
   // Search
   const searchMovies = async (e) => {
@@ -72,7 +72,9 @@ const fetchLatestMovies = async () => {
 
     try {
       const response = await fetch(
-        `https://www.omdbapi.com/?s=${encodeURIComponent(searchQuery)}&apikey=${API_KEY}`
+        `https://www.omdbapi.com/?s=${encodeURIComponent(
+          searchQuery
+        )}&apikey=${API_KEY}`
       );
       const data = await response.json();
 
@@ -89,7 +91,9 @@ const fetchLatestMovies = async () => {
       } else {
         const words = searchQuery.split(" ");
         const similarResponse = await fetch(
-          `https://www.omdbapi.com/?s=${encodeURIComponent(words[0])}&apikey=${API_KEY}`
+          `https://www.omdbapi.com/?s=${encodeURIComponent(
+            words[0]
+          )}&apikey=${API_KEY}`
         );
         const similarData = await similarResponse.json();
 
@@ -117,8 +121,8 @@ const fetchLatestMovies = async () => {
 
   return (
     <>
-      <div className="h-screen flex flex-col  items-center justify-center px-4  bg-custom-gradient">
-        <div className=" bg-black bg-opacity-50 p-7 pt-10 pb-10 rounded-2xl">
+      <div className="h-full flex flex-col  items-center justify-center px-4  bg-custom-gradient">
+        <div className=" bg-black bg-opacity-50 p-7 mt-20 pt-10 pb-10 rounded-2xl">
           <div className="text-center mb-8 space-y-4">
             <h1 className="lg:text-5xl md:text-3xl sm:text-1xl font-bold leading-relaxed">
               <span className="text-orange-400">
@@ -129,23 +133,25 @@ const fetchLatestMovies = async () => {
               <span className="text-white">Today?</span>
             </h1>
           </div>
-          <div className="w-full max-w-2xl space-y-4">
-             <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
-            <div className="relative">
-            <form onSubmit={searchMovies} className="max-w-3xl mx-auto mb-12"></form>
-              <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search for movies"
-                className="w-full px-12 py-3 text-center rounded-full bg-white-500 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-              />
-            </div>
-            <button type="submit" className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors">
-              SEARCH
-            </button>
-            <form/>
+          <div className="w-full max-w-2xl ">
+            <form onSubmit={searchMovies} className="max-w-3xl mx-auto mb-12 space-y-4">
+              <div className="relative">
+                <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search for movies"
+                  className="w-full px-12 py-3 text-center rounded-full bg-white-500 text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors"
+              >
+                SEARCH
+              </button>
+            </form>
           </div>
         </div>
         <div className="mt-12 text-white text-xl ">
@@ -155,19 +161,13 @@ const fetchLatestMovies = async () => {
           <div className="w-screen  bg-black text-white py-8 px-4 sm:flex-auto  mx-auto p-5 border-t-2 border-gray-900"></div>
         </div>
 
-        <div className="mb-12">
+        <div className="mb-12 ">
           <h3 className="text-2xl font-bold mb-6 text-white ">Latest Movies</h3>
           {loading && (
             <div className="text-center text-gray-400">Loading...</div>
           )}
           {error && <div className="text-center text-red-500">{error}</div>}
-          {!loading && !error && (
-            <MovieGrid
-              movies={latestMovies}
-              favorites={favorites}
-              onMovieClick={setSelectedMovie}
-            />
-          )}
+          {!loading && !error && <MovieGrid movies={latestMovies} />}
         </div>
 
         {movies.length > 0 && (
@@ -175,11 +175,7 @@ const fetchLatestMovies = async () => {
             <h3 className="text-2xl font-bold mb-6 text-white">
               Search Results
             </h3>
-            <MovieGrid
-              movies={movies}
-              favorites={favorites}
-              onMovieClick={setSelectedMovie}
-            />
+            <MovieGrid movies={movies} />
           </div>
         )}
       </div>
