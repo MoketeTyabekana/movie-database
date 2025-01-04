@@ -27,17 +27,22 @@ function Home({ favorites, setSelectedMovie }) {
             </h1>
           </div>
           <div className="w-full max-w-2xl space-y-4">
+             <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
             <div className="relative">
+            <form onSubmit={searchMovies} className="max-w-3xl mx-auto mb-12"></form>
               <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
               <input
                 type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search for movies"
                 className="w-full px-12 py-3 text-center rounded-full bg-white-500 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
               />
             </div>
-            <button className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors">
+            <button type="submit" className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors">
               SEARCH
             </button>
+            <form/>
           </div>
         </div>
         <div className="mt-12 text-white text-xl ">
@@ -63,15 +68,17 @@ function Home({ favorites, setSelectedMovie }) {
         </div>
 
         {movies.length > 0 && (
-    <div className="mb-8">
-      <h3 className="text-2xl font-bold mb-6 text-white">Search Results</h3>
-      <MovieGrid 
-        movies={movies}
-        favorites={favorites}
-        onMovieClick={setSelectedMovie}
-      />
-    </div>
-  )}
+          <div className="mb-8">
+            <h3 className="text-2xl font-bold mb-6 text-white">
+              Search Results
+            </h3>
+            <MovieGrid
+              movies={movies}
+              favorites={favorites}
+              onMovieClick={setSelectedMovie}
+            />
+          </div>
+        )}
       </div>
     </>
   );
