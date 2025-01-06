@@ -17,7 +17,7 @@ export default function FooterContainer() {
               <p>EMTMovies©2024</p>
               <p className="text-sm">
                 Developed By :{" "}
-                <span className="text-orange-500 font-bold">Mokete Elias Tyabekana</span>
+                <span className="text-orange-500 font-bold">Elias Mokete Tyabekana</span>
               </p>
             </div>
             <div className="flex-row text-left">
