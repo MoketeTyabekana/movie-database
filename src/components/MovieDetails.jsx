@@ -55,7 +55,6 @@ MovieDetails.propTypes = {
   movie: PropTypes.object.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  onToggleFavorite: PropTypes.func.isRequired,
   onWatchTrailer: PropTypes.func.isRequired,
 };
 

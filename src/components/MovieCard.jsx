@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 const MovieCard = ({ movie,onClick }) => {
   return (
     <div 
-      className="bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-transform hover:scale-105"
+      className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
       onClick={onClick}
     >
 
@@ -19,7 +18,7 @@ const MovieCard = ({ movie,onClick }) => {
       </div>
       <div className="p-4">
         <h3 className="text-sm font-bold truncate mb-1 text-white">{movie.Title}</h3>
-        <div className="flex justify-between text-xs text-gray-400">
+        <div className="flex justify-between text-xs text-white font-bold">
           <span>{movie.Year}</span>
           <span>IMDb: {movie.imdbRating}</span>
         </div>

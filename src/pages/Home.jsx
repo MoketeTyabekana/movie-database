@@ -5,10 +5,9 @@ import MovieGrid from "../components/MovieGrid";
 
 function Home({setSelectedMovie }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [movies, setMovies] = useState([]);
-  
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+const [movies, setMovies] = useState([]);
+const [loading, setLoading] = useState(false);
+const [error, setError] = useState(null);
 
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
@@ -45,25 +44,25 @@ function Home({setSelectedMovie }) {
             words[0]
           )}&apikey=${API_KEY}`
         );
-        const similarData = await similarResponse.json();
+        const similarMovies = await similarResponse.json();
 
-        if (similarData.Response === "True") {
-          const detailedSimilarMovies = await Promise.all(
-            similarData.Search.map(async (movie) => {
+        if (similarMovies.Response === "True") {
+          const MovieDetails = await Promise.all(
+            similarMovies.Search.map(async (movie) => {
               const detailResponse = await fetch(
                 `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
               );
               return await detailResponse.json();
             })
           );
-          setMovies(detailedSimilarMovies);
+          setMovies(MovieDetails);
         } else {
           setError("No movies found. Try a different search term.");
         }
       }
-    } catch (err) {
+    } catch (e) {
       setError("An error occurred while fetching movies. Please try again.");
-      console.error(err);
+      console.error(e);
     } finally {
       setLoading(false);
     }
@@ -130,7 +129,7 @@ function Home({setSelectedMovie }) {
 };
 
 Home.propTypes = {
-  setSelectedMovie: PropTypes.func.isRequired
+  setSelectedMovie: PropTypes.func.isRequired,
 };
 
 export default Home;
