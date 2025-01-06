@@ -3,7 +3,7 @@ import Profile  from '../assets/profile.jpg';
 
 function About() {
   return (
-    <div className="min-h-screen w-full bg-custom-gradient  p-6 md:p-12">
+    <div className="min-h-screen it w-full bg-custom-gradient  p-6">
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
         <div className="flex justify-center ">

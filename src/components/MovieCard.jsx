@@ -17,7 +17,7 @@ const MovieCard = ({ movie,onClick }) => {
         
       </div>
       <div className="p-4">
-        <h3 className="text-sm font-bold truncate mb-1 text-white">{movie.Title}</h3>
+        <h3 className="text-sm font-bold truncate mb-1 text-orange-400">{movie.Title}</h3>
         <div className="flex justify-between text-xs text-white font-bold">
           <span>{movie.Year}</span>
           <span>IMDb: {movie.imdbRating}</span>
