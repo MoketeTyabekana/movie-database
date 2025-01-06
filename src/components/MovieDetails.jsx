@@ -1,16 +1,8 @@
-import React from "react";
-import PropTypes from "prop-types";
-import {
-  AiOutlineClose,
-  AiOutlinePlayCircle,
-} from "react-icons/ai";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { AiOutlineClose, AiOutlinePlayCircle } from 'react-icons/ai';
 
-const MovieDetails = ({
-  movie,
-  isOpen,
-  onClose,
-  onWatchTrailer,
-}) => {
+const MovieDetails = ({ movie, isOpen, onClose, onWatchTrailer }) => {
   if (!isOpen) return null;
 
   return (
@@ -22,40 +14,27 @@ const MovieDetails = ({
         >
           <AiOutlineClose className="w-6 h-6" />
         </button>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
           <div>
             <img
-              src={
-                movie.Poster !== "N/A"
-                  ? movie.Poster
-                  : "https://via.placeholder.com/300x450"
-              }
+              src={movie.Poster !== "N/A" ? movie.Poster : ""}
               alt={movie.Title}
               className="w-full h-[400px] object-cover rounded-lg"
             />
           </div>
-
+          
           <div>
             <h2 className="text-2xl font-bold mb-2">{movie.Title}</h2>
-            <p className="text-gray-400 mb-4">
-              {movie.Year} | IMDb: {movie.imdbRating}
-            </p>
+            <p className="text-gray-400 mb-4">{movie.Year} | IMDb: {movie.imdbRating}</p>
             <p className="text-gray-300 mb-4">{movie.Plot}</p>
-
+            
             <div className="mb-4">
-              <p>
-                <span className="text-gray-400">Director:</span>{" "}
-                {movie.Director}
-              </p>
-              <p>
-                <span className="text-gray-400">Cast:</span> {movie.Actors}
-              </p>
-              <p>
-                <span className="text-gray-400">Genre:</span> {movie.Genre}
-              </p>
+              <p><span className="text-gray-400">Director:</span> {movie.Director}</p>
+              <p><span className="text-gray-400">Cast:</span> {movie.Actors}</p>
+              <p><span className="text-gray-400">Genre:</span> {movie.Genre}</p>
             </div>
-
+            
             <div className="flex gap-4">
               <button
                 onClick={() => onWatchTrailer(movie.TrailerUrl)}
@@ -76,7 +55,9 @@ MovieDetails.propTypes = {
   movie: PropTypes.object.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
+  onToggleFavorite: PropTypes.func.isRequired,
   onWatchTrailer: PropTypes.func.isRequired,
 };
 
 export default MovieDetails;
+

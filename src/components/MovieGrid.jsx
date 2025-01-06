@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import MovieCard from './MovieCard';
 
-function MovieGrid({ movies}) {
+function MovieGrid({ movies,onMovieClick}) {
 
     if (!movies.length) {
         return null;
@@ -14,7 +14,7 @@ function MovieGrid({ movies}) {
             <MovieCard
               key={movie.imdbID}
               movie={movie}
-             
+              onClick={() => onMovieClick(movie)}
              
             />
           ))}
@@ -24,7 +24,6 @@ function MovieGrid({ movies}) {
 
     MovieGrid.propTypes = {
         movies: PropTypes.array.isRequired,
-        favorites: PropTypes.arrayOf(PropTypes.string).isRequired,
         onMovieClick: PropTypes.func.isRequired,
       };
       
