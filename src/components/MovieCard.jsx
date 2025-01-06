@@ -1,16 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AiFillStar } from 'react-icons/ai';
 
-function MovieCard({ movie}) {
+function MovieCard({ movie,onClick}) {
   return (
     <div 
    className="bg-gray-800 rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition-transform hover:scale-105"
-  
+   onClick={onClick}
  > 
   <div className="relative">
     <img
-      src={movie.Poster !== "N/A" ? movie.Poster : "https://via.placeholder.com/300x450"}
+      src={movie.Poster !== "N/A" ? movie.Poster : ""}
       alt={movie.Title}
       className="w-full h-[300px] object-cover"
     />

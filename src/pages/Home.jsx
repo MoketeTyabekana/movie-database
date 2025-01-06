@@ -3,10 +3,10 @@ import { Search } from "lucide-react";
 import PropTypes from "prop-types";
 import MovieGrid from "../components/MovieGrid";
 
-function Home({ favorites, setSelectedMovie }) {
+function Home({setSelectedMovie }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [latestMovies, setLatestMovies] = useState([]);
+  
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -121,11 +121,16 @@ function Home({ favorites, setSelectedMovie }) {
             {loading && <div className="text-center text-gray-400">Loading...</div>}
             {error && <div className="text-center text-red-500">{error}</div>}
             <MovieGrid movies={movies} />
+            onMovieClick={setSelectedMovie}
           </div>
         )}
       </div>
     </>
   );
-}
+};
+
+Home.propTypes = {
+  setSelectedMovie: PropTypes.func.isRequired
+};
 
 export default Home;
