@@ -6,7 +6,7 @@ import FooterContainer from './FooterContainer';
 function NavBar() {
   return (
     <>
-      <nav className="bg-white dark:bg-black w-screen fixed top-0 left-0 shadow-md z-50">
+      <nav className="bg-white dark:bg-black w-screen  fixed top-0 left-0 shadow-md z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
           <Link to="/Home" className="flex items-center space-x-3">
             <img src={icon} alt="Logo" className="w-8" />

@@ -70,8 +70,8 @@ const [error, setError] = useState(null);
 
   return (
     <>
-      <div className="h-full flex flex-col  items-center justify-center px-4  bg-custom-gradient">
-        <div className=" bg-black bg-opacity-50 p-7 mt-20 pt-10 pb-10 rounded-2xl">
+      <div className="h-full flex flex-col  items-center justify-center px-4 pt-10  bg-custom-gradient">
+        <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-7 mt-20 pt-10 pb-10 ">
           <div className="text-center mb-8 space-y-4">
             <h1 className="lg:text-5xl md:text-3xl sm:text-1xl font-bold leading-relaxed">
               <span className="text-orange-400">
