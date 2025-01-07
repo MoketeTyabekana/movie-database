@@ -6,7 +6,7 @@ import FooterContainer from './FooterContainer';
 function NavBar() {
   return (
     <>
-      <nav className="bg-white-400  bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b-2 border-gray-400 border-opacity-10 w-screen  fixed top-0 left-0 shadow-md z-50">
+      <nav className="bg-white-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b-2 border-gray-400 border-opacity-10 w-screen fixed top-0 left-0 shadow-md z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
           <Link to="/Home" className="flex items-center space-x-3">
             <img src={icon} alt="Logo" className="w-8" />
@@ -37,10 +37,7 @@ function NavBar() {
               />
             </svg>
           </button>
-          <div
-            className="hidden w-full md:block md:w-auto"
-            id="navbar-default"
-          >
+          <div className="hidden w-full md:block md:w-auto" id="navbar-default">
             <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:border-0">
               <li>
                 <Link
@@ -62,10 +59,10 @@ function NavBar() {
           </div>
         </div>
       </nav>
-     <main>
-     <Outlet />
-     </main>
-     <FooterContainer/>
+      <main>
+        <Outlet />
+      </main>
+      <FooterContainer />
     </>
   );
 }

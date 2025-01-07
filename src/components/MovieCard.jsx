@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const MovieCard = ({ movie,onClick }) => {
   return (
     <div 
-      className="bg-gray-800 rounded-lg overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+      className="bg-gray-950 rounded-lg overflow-hidden cursor-pointer border-b-2 border-gray-400 transform transition-transform hover:scale-105"
       onClick={onClick}
     >
 
