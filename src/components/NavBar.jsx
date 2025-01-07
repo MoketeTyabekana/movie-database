@@ -63,7 +63,7 @@ function NavBar() {
                   to="/about"
                   className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
                 >
-                  About Me
+                  About
                 </Link>
               </li>
             </ul>

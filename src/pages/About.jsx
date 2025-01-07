@@ -3,7 +3,7 @@ import Profile from "../assets/profile.jpg";
 
 function About() {
   return (
-    <div className="min-h-screen it w-full bg-custom-gradient pt-40 px-20">
+    <div className="min-h-screen it w-full bg-custom-gradient pt-40 pb-20 px-20">
       <div
         className="container bg-white-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-10 ">
         <div className="  ">
@@ -15,7 +15,7 @@ function About() {
 
           <div className=" text-black space-y-3  bg-orange-400 p-10 ">
             <h1 className="text-3xl md:text-4xl font-bold mb-2 uppercase text-white flex justify-center ">
-            About <span className="text-black">EMT</span> Movies
+            About <span className="text-black"> EMT </span> Movies
             </h1>
             <hr />
             <div className="">
@@ -23,7 +23,7 @@ function About() {
                 Greetings from <span className="font-semibold">EMT Movies</span>, your one-stop shop for learning about
                 the film industry! Regardless of your preference for exciting
                 blockbusters, timeless masterpieces, or undiscovered gems, EMT
-                Movies makes it simple to find and explore films you'll enjoy.
+                Movies makes it simple to find and explore films you&apos;ll enjoy.
                 With comprehensive movie synopses, trailers, and tailored
                 suggestions, our site is made to make your cinematic experience
                 both thrilling and simple.
