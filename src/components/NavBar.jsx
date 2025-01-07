@@ -50,20 +50,19 @@ function NavBar() {
                   Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  to="/favourites"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
-                >
-                  Favourites
-                </Link>
-              </li>
+             
+             
+             
+             
+             
+             
+             
               <li>
                 <Link
                   to="/about"
                   className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
                 >
-                  About
+                  About Us
                 </Link>
               </li>
             </ul>

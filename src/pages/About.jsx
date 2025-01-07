@@ -5,7 +5,7 @@ function About() {
   return (
     <div className="min-h-screen it w-full bg-custom-gradient pt-40 pb-20 px-20">
       <div
-        className="container bg-white-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-10 ">
+        className="   p-10 ">
         <div className="  ">
           <img
             src="https://w.wallhaven.cc/full/0w/wallhaven-0w2de6.jpg"
@@ -13,13 +13,13 @@ function About() {
             className="w-full h-64 object-cover overflow-hidden "
           />
 
-          <div className=" text-black space-y-3  bg-orange-400 p-10 ">
-            <h1 className="text-3xl md:text-4xl font-bold mb-2 uppercase text-white flex justify-center ">
-            About <span className="text-black"> EMT </span> Movies
+          <div className=" text-black space-y-3  bg-gray-950 p-10 ">
+            <h1 className="text-3xl md:text-4xl font-bold mb-2 uppercase text-orange-400  ">
+            About EMT Movies
             </h1>
             <hr />
             <div className="">
-              <p className="text-black mb-4">
+              <p className="text-gray-50 mb-4 text-justify">
                 Greetings from <span className="font-semibold">EMT Movies</span>, your one-stop shop for learning about
                 the film industry! Regardless of your preference for exciting
                 blockbusters, timeless masterpieces, or undiscovered gems, EMT
@@ -28,7 +28,7 @@ function About() {
                 suggestions, our site is made to make your cinematic experience
                 both thrilling and simple.
               </p>
-              <p className="text-black mb-4">
+              <p className="text-gray-50 mb-4 text-justify">
                 Modern technologies like React, Tailwind CSS, and the OMDB API
                 enable <span className="font-semibold">EMT Movies</span>. React guarantees a responsive and dynamic
                 user interface that offers a simple and engaging experience.
@@ -37,7 +37,7 @@ function About() {
                 offers contemporary, responsive styles that look fantastic on
                 all devices.
               </p>
-              <p className="text-black">
+              <p className="text-gray-50 text-justify">
                 Our goal at <span className="font-semibold">EMT Movies</span> is straightforward: to introduce you to
                 films that enthral, inspire, and amuse you. Our goal is to
                 become your go-to resource for everything related to movies,
@@ -46,6 +46,7 @@ function About() {
                 and allow us to assist you in producing unforgettable cinematic
                 moments!
               </p>
+              
             </div>
           </div>
         </div>
