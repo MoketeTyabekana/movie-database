@@ -112,7 +112,7 @@ function Home({ setSelectedMovie }) {
 
         {movies.length > 0 && (
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-white md:m-20 uppercase">
+            <h3 className="text-2xl font-bold mb-6 text-white md:m-20 capitalize">
               Search Results for :{" "}
               <span className="text-orange-400 ">{searchQuery}</span>
             </h3>
