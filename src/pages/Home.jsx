@@ -73,7 +73,7 @@ const [error, setError] = useState(null);
       <div className="h-full flex flex-col  items-center justify-center px-4 pt-10  bg-custom-gradient">
         <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-7 mt-20 pt-10 pb-10 ">
           <div className="text-center mb-8 space-y-4">
-            <h1 className="lg:text-5xl md:text-3xl sm:text-1xl font-bold leading-relaxed">
+            <h1 className="lg:text-4xl md:text-2xl sm:text-1xl font-bold tracking-wider">
               <span className="text-orange-400">
                 What Would You Like To Watch
               </span>
@@ -88,7 +88,7 @@ const [error, setError] = useState(null);
               className="max-w-3xl mx-auto mb-12 space-y-4"
             >
               <div className="relative">
-                <Search className="absolute left-4 top-3.5 h-5 w-5 text-gray-500" />
+                <Search className="absolute left-4 top-3.5 h-5 w-5 border-gray-400" />
                 <input
                   type="text"
                   value={searchQuery}
@@ -99,25 +99,27 @@ const [error, setError] = useState(null);
               </div>
               <button
                 type="submit"
-                className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors"
+                className="w-full py-3 bg-orange-400 text-white font-bold rounded-full hover:bg-orange-600 transition-colors tracking-wider"
               >
-                SEARCH
+                Search
               </button>
             </form>
           </div>
         </div>
         <div className="mt-12 text-white text-xl ">
-          <h2 className="search-results text-center mb-10 ">
-            Your Search Results Will Appear Below:
+          <h2 className="search-results text-center mb-10 tracking-wider ">
+            Your Search Results Will Appear Below
           </h2>
+         
         </div>
-
+       
         {movies.length > 0 && (
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-white md:m-20">
-              Search Results
+            <h3 className="text-2xl font-bold mb-6 text-white md:m-20 uppercase">
+              Search Results for : <span className="text-orange-400 ">{searchQuery}</span> 
             </h3>
-            {loading && <div className="text-center text-gray-400">Loading...</div>}
+           
+            {loading && <div className="text-center text-white">Loading...</div>}
             {error && <div className="text-center text-red-500">{error}</div>}
             <MovieGrid movies={movies} />
             onMovieClick={setSelectedMovie}

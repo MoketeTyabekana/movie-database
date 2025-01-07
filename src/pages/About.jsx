@@ -3,12 +3,12 @@ import Profile from "../assets/profile.jpg";
 
 function About() {
   return (
-    <div className="min-h-screen it w-full bg-custom-gradient pt-40 p-6">
+    <div className="min-h-screen it w-full bg-custom-gradient pt-40 px-20">
       <div className="container bg-white-400 rounded-md bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10
   p-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="flex justify-center ">
-            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-orange-400">
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-full  overflow-hidden border-2 border-orange-400">
               <img
                 src={Profile}
                 alt="Profile"
@@ -22,7 +22,7 @@ function About() {
             <h2 className="text-xl md:text-2xl text-orange-400 mb-6">
               Frontend Developer
             </h2>
-            <div>
+            <div className="">
               <p className="text-black mb-4">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
