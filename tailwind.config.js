@@ -6,7 +6,9 @@ export default {
     extend: {
       backgroundImage: {
         'custom-gradient': "linear-gradient(-180deg, rgba(0,0,0,0.9), rgba(0,0,0,1)), url('https://i.ebayimg.com/images/g/BVMAAOSw1uNhenX7/s-l1600.jpg')",
+        'custom-gradient-two': "linear-gradient(-180deg, rgba(0,0,0,0.9), rgba(0,0,0,1)), url('https://t4.ftcdn.net/jpg/08/45/10/75/360_F_845107561_vNhctGj9V9wtYwUTXK4AxyjyGuRDFmXL.jpg')",
       },
+      
       opacity: {
         '15': '0.15',
         '50': '0.50',

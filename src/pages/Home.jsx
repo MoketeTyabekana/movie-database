@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import PropTypes from "prop-types";
+import icon from "../assets/icon.png";
 import MovieGrid from "../components/MovieGrid";
 
-function Home({setSelectedMovie }) {
+function Home({ setSelectedMovie }) {
   const [searchQuery, setSearchQuery] = useState("");
-const [movies, setMovies] = useState([]);
-const [loading, setLoading] = useState(false);
-const [error, setError] = useState(null);
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
@@ -72,15 +73,18 @@ const [error, setError] = useState(null);
     <>
       <div className="h-full flex flex-col  items-center justify-center px-4 pt-10  bg-custom-gradient">
         <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-7 mt-20 pt-10 pb-10 ">
-          <div className="text-center mb-8 space-y-4">
-            <h1 className="lg:text-4xl md:text-2xl sm:text-1xl font-bold tracking-wider">
-              <span className="text-orange-400">
-                What Would You Like To Watch
-              </span>
-              <span className="text-white">,</span>
-              <br />
-              <span className="text-white">Today?</span>
+          <div className="flex justify-center mb-5 border-b-2 border-gray-100 p-10 space-x-3 items-center">
+            <img src={icon} alt="Logo" className=" lg:w-12 sm:w-8" />
+            <h1 className="text-white font-bold lg:text-6xl md:text-3xl">
+              <span className="text-orange-400">EMT</span>Movies
             </h1>
+          </div>
+          <div className="text-center mb-8 space-y-4">
+            <h3 className="lg:text-2xl md:text-2xl sm:text-1xl font-bold tracking-wider capitalize ">
+              <span className="text-orange-400">What’s your pick for</span>
+
+              <span className="text-white">, Today?</span>
+            </h3>
           </div>
           <div className="w-full max-w-2xl ">
             <form
@@ -110,16 +114,17 @@ const [error, setError] = useState(null);
           <h2 className="search-results text-center mb-10 tracking-wider ">
             Your Search Results Will Appear Below
           </h2>
-         
         </div>
-       
+
         {movies.length > 0 && (
           <div className="mb-8">
             <h3 className="text-2xl font-bold mb-6 text-white md:m-20 uppercase">
-              Search Results for : <span className="text-orange-400 ">{searchQuery}</span> 
+              Search Results for :{" "}
+              <span className="text-orange-400 ">{searchQuery}</span>
             </h3>
-           
-            {loading && <div className="text-center text-white">Loading...</div>}
+            {loading && (
+              <div className="text-center text-white">Loading...</div>
+            )}
             {error && <div className="text-center text-red-500">{error}</div>}
             <MovieGrid movies={movies} />
             onMovieClick={setSelectedMovie}
@@ -128,7 +133,7 @@ const [error, setError] = useState(null);
       </div>
     </>
   );
-};
+}
 
 Home.propTypes = {
   setSelectedMovie: PropTypes.func.isRequired,
