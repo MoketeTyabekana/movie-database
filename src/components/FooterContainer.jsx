@@ -20,7 +20,7 @@ export default function FooterContainer() {
                 <span className="text-orange-500 font-bold">Elias Mokete Tyabekana</span>
               </p>
             </div>
-            <div className="flex-row text-left">
+            <div className="flex-row text-right">
               <p className="text-sm mb-4">Follow Me</p>
               <div className="flex space-x-6">
                 <a
