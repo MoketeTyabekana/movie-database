@@ -104,6 +104,7 @@ function Home({ setSelectedMovie }) {
             </form>
           </div>
         </div>
+        
         <div className="mt-12 text-white text-xl ">
           <h2 className="search-results text-center mb-10 tracking-wider ">
             Your Search Results Will Appear Below

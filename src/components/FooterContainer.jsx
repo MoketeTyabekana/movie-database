@@ -13,8 +13,8 @@ export default function FooterContainer() {
      
         <div className=" pl-20 pr-20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0 flex gap-5 items-center sm:flex-auto">
-              <p>EMTMovies©2024</p>
+            <div className="mb-4 md:mb-0 flex flex-col justify-start gap-5  sm:flex-auto">
+              <p>EMTMovies©2025</p>
               <p className="text-sm">
                 Developed By :{" "}
                 <span className="text-orange-500 font-bold">Elias Mokete Tyabekana</span>

@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AiOutlineClose, AiOutlinePlayCircle } from 'react-icons/ai';
+import { AiOutlineClose} from 'react-icons/ai';
 
-const MovieDetails = ({ movie, isOpen, onClose, onWatchTrailer }) => {
+const MovieDetails = ({ movie, isOpen, onClose}) => {
   if (!isOpen) return null;
 
   return (
@@ -34,16 +34,6 @@ const MovieDetails = ({ movie, isOpen, onClose, onWatchTrailer }) => {
               <p><span className="text-gray-400">Cast:</span> {movie.Actors}</p>
               <p><span className="text-gray-400">Genre:</span> {movie.Genre}</p>
             </div>
-            
-            <div className="flex gap-4">
-              <button
-                onClick={() => onWatchTrailer(movie.TrailerUrl)}
-                className="flex items-center justify-center gap-2 px-4 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition-colors"
-              >
-                <AiOutlinePlayCircle className="w-5 h-5" />
-                Watch Trailer
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -55,7 +45,7 @@ MovieDetails.propTypes = {
   movie: PropTypes.object.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  onWatchTrailer: PropTypes.func.isRequired,
+  
 };
 
 export default MovieDetails;
