@@ -9,9 +9,9 @@ import React from "react";
 
 export default function FooterContainer() {
   return (
-    <footer className="bg-black text-white py-8 px-4 sm:flex-auto  mx-auto p-5 border-t-2 border-gray-900">
+    <footer className="bg-black text-white py-8 px-4 flex-auto  mx-auto p-5 border-t-2 border-gray-900">
      
-        <div className=" pl-20 pr-20">
+        <div className=" lg:px-20">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0 flex flex-col justify-start gap-5  sm:flex-auto">
               <p>EMTMovies©2025</p>
@@ -20,9 +20,9 @@ export default function FooterContainer() {
                 <span className="text-orange-500 font-bold">Elias Mokete Tyabekana</span>
               </p>
             </div>
-            <div className="flex-row text-right">
+            <div className="flex-row text-right sm:justify-center">
               <p className="text-sm mb-4">Follow Me</p>
-              <div className="flex space-x-6">
+              <div className="flex space-x-6 sm:justify-center">
                 <a
                   href="https://www.linkedin.com/in/mokete-elias-tyabekana-88a22a143/"
                   aria-label="LinkedIn"
