@@ -8,7 +8,7 @@ function NavBar() {
     <>
       <nav className="bg-white-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b-2 border-gray-400 border-opacity-10 w-screen fixed top-0 left-0 shadow-md z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
-          <Link to="/Home" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img src={icon} alt="Logo" className="w-8" />
             <h1 className="text-white font-bold lg:text-3xl">
               <span className="text-orange-400">EMT</span>Movies
