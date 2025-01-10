@@ -1,9 +1,9 @@
 import React from "react";
-import Profile from "../assets/profile.jpg";
+
 
 function About() {
   return (
-    <div className="min-h-screen it w-full bg-custom-gradient sm:p-10 lg:pt-40 pb-20 lg:px-20">
+    <div className="min-h-screen it w-full bg-custom-gradient sm:p-10 lg:pt-40 lg:pb-20 lg:px-20  sm:pt-20 sm:pb-10 sm:px-10">
       <div
         className="  p-2 lg:p-10 pt-10">
         <div className="  ">
@@ -13,13 +13,13 @@ function About() {
             className="w-full h-64 object-cover overflow-hidden "
           />
 
-          <div className=" text-black space-y-3  bg-gray-950 p-10 ">
+          <div className=" text-black space-y-3  bg-gray-950 lg:p-10 sm:p-7">
             <h1 className="lg:text-3xl md:text-4xl font-bold mb-2 uppercase text-orange-400  ">
             About EMT Movies
             </h1>
             <hr />
             <div className="">
-              <p className="text-gray-50 mb-4 text-justify text-sm md:text-base lg:text-lg xl:text-xl">s
+              <p className="text-gray-50 mb-4 text-justify text-sm md:text-base lg:text-lg xl:text-xl">
                 Greetings from <span className="font-semibold">EMT Movies</span>, your one-stop shop for learning about
                 the film industry! Regardless of your preference for exciting
                 blockbusters, timeless masterpieces, or undiscovered gems, EMT

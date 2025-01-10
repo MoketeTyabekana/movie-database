@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import { Search } from "lucide-react";
 import PropTypes from "prop-types";
 import icon from "../assets/icon.png";
@@ -71,15 +71,15 @@ function Home({ setSelectedMovie }) {
 
   return (
     <>
-      <div className="min-h-screen flex flex-col  items-center justify-center px-4 pt-10  bg-custom-gradient">
-        <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-8 mt-20 pt-10 pb-10 w-2/5 ">
+      <div className="min-h-screen flex flex-col items-center justify-center pt-10 bg-custom-gradient">
+        <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-8 mt-20 pt-10 pb-10 lg:w-2/5 ">
           <div className="flex justify-center mb-5 border-b-2 border-gray-100 p-10 space-x-3 items-center">
             <img src={icon} alt="Logo" className=" lg:w-10 sm:w-6" />
             <h1 className="text-white font-bold lg:text-5xl md:text-3xl">
               <span className="text-orange-400">EMT</span>Movies
             </h1>
           </div>
-         
+
           <div className="w-full  flex flex-col">
             <form
               onSubmit={searchMovies}
@@ -118,15 +118,13 @@ function Home({ setSelectedMovie }) {
               <span className="text-orange-400 ">{searchQuery}</span>
             </h3>
 
-            {loading &&  (
+            {loading && (
               <div className="text-center text-white">Loading...</div>
             )}
 
             {error && <div className="text-center text-red-500">{error}</div>}
-            
-            <MovieGrid movies={movies} onMovieClick={setSelectedMovie}
-            />
-            
+
+            <MovieGrid movies={movies} onMovieClick={setSelectedMovie} />
           </div>
         )}
       </div>

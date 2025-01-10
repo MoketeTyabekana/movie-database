@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+
 const MovieCard = ({ movie, onClick }) => {
   return (
     <div 

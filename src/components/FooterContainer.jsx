@@ -13,14 +13,14 @@ export default function FooterContainer() {
      
         <div className=" lg:px-20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0 flex flex-col justify-start gap-5  sm:flex-auto">
+            <div className="mb-4 md:mb-0 flex flex-col lg:justify-start gap-5  sm:flex-auto">
               <p>EMTMovies©2025</p>
               <p className="text-sm">
                 Developed By :{" "}
                 <span className="text-orange-500 font-bold">Elias Mokete Tyabekana</span>
               </p>
             </div>
-            <div className="flex-row text-right sm:justify-center">
+            <div className="flex-row sm:text-right sm:justify-center">
               <p className="text-sm mb-4">Follow Me</p>
               <div className="flex space-x-6 sm:justify-center">
                 <a
