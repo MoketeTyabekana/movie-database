@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Search } from "lucide-react";
 import PropTypes from "prop-types";
 import icon from "../assets/icon.png";
@@ -48,7 +48,7 @@ function Home({ setSelectedMovie }) {
         const similarMovies = await similarResponse.json();
 
         if (similarMovies.Response === "True") {
-          const MovieDetails = await Promise.all(
+          const similarMovies = await Promise.all(
             similarMovies.Search.map(async (movie) => {
               const detailResponse = await fetch(
                 `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=${API_KEY}`
@@ -56,7 +56,7 @@ function Home({ setSelectedMovie }) {
               return await detailResponse.json();
             })
           );
-          setMovies(MovieDetails);
+          setMovies(similarMovies);
         } else {
           setError("No movies found. Try a different search term.");
         }
@@ -79,7 +79,7 @@ function Home({ setSelectedMovie }) {
               <span className="text-orange-400">EMT</span>Movies
             </h1>
           </div>
-         
+
           <div className="w-full  flex flex-col">
             <form
               onSubmit={searchMovies}
@@ -104,6 +104,7 @@ function Home({ setSelectedMovie }) {
             </form>
           </div>
         </div>
+
         <div className="mt-12 text-white text-xl ">
           <h2 className="search-results text-center mb-10 tracking-wider ">
             Your Search Results Will Appear Below
@@ -112,16 +113,18 @@ function Home({ setSelectedMovie }) {
 
         {movies.length > 0 && (
           <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-white md:m-20 uppercase">
+            <h3 className="text-2xl font-bold mb-6 text-white md:m-20 capitalize">
               Search Results for :{" "}
               <span className="text-orange-400 ">{searchQuery}</span>
             </h3>
+
             {loading && (
               <div className="text-center text-white">Loading...</div>
             )}
+
             {error && <div className="text-center text-red-500">{error}</div>}
-            <MovieGrid movies={movies} />
-            onMovieClick={setSelectedMovie}
+
+            <MovieGrid movies={movies} onMovieClick={setSelectedMovie} />
           </div>
         )}
       </div>

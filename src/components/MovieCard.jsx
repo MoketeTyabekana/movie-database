@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const MovieCard = ({ movie,onClick }) => {
+
+const MovieCard = ({ movie, onClick }) => {
   return (
     <div 
       className="bg-gray-950 rounded-lg overflow-hidden cursor-pointer border-b-2 border-gray-400 transform transition-transform hover:scale-105"
@@ -12,15 +13,15 @@ const MovieCard = ({ movie,onClick }) => {
         <img
           src={movie.Poster !== "N/A" ? movie.Poster : ""}
           alt={movie.Title}
-          className="w-full h-[300px] object-cover"
+          className="w-full h-[250px] object-cover"
         />
         
       </div>
       <div className="p-4">
         <h3 className="text-sm font-bold truncate mb-1 text-orange-400">{movie.Title}</h3>
         <div className="flex justify-between text-xs text-white font-bold">
-          <span>{movie.Year}</span>
-          <span>IMDb: {movie.imdbRating}</span>
+         <p> {movie.Year}</p>
+        <p>IMDb:{movie.imdbRating}</p>
         </div>
       </div>
     </div>
