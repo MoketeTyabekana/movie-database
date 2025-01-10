@@ -1,16 +1,14 @@
 import "./App.css";
+import React, { useState } from 'react';
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import MovieDetail from "./components/MovieDetails";
+import MovieDetails from "./components/MovieDetails";
 
 export default function App() {
-
-
-
-
+  const [selectedMovie, setSelectedMovie] = useState(null);
   return (
     <>
     <div>
@@ -23,8 +21,8 @@ export default function App() {
    </Routes>
  </BrowserRouter>
     </div>
+    <MovieDetails />
 
-    
     </>
 
 
