@@ -1,23 +1,36 @@
 import "./App.css";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
-import Favourites from "./pages/Favourites";
 import About from "./pages/About";
+import MovieDetails from "./components/MovieDetails";
 
 export default function App() {
+  const [selectedMovie, setSelectedMovie] = useState(null);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<NavBar />}>
-          <Route index element={<Home />} />
-          <Route path="favourites" element={<Favourites />} />
-          <Route path="about" element={<About />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <>
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<NavBar />}>
+              <Route index element={<Home setSelectedMovie={setSelectedMovie}/>} />
+              <Route
+                path="about"
+                element={<About />}
+              />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+     
+      <MovieDetails
+        movie={selectedMovie}
+        isOpen={!!selectedMovie}
+        onClose={() => setSelectedMovie(null)}
+      />
+    </>
   );
 }
 
