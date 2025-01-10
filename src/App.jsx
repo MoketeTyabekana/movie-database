@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -11,21 +11,26 @@ export default function App() {
   const [selectedMovie, setSelectedMovie] = useState(null);
   return (
     <>
-    <div>
-    <BrowserRouter>
-   <Routes>
-     <Route path="/" element={<NavBar />}>
-       <Route index element={<Home />} />
-       <Route path="about" element={<About />}/>
-     </Route>
-   </Routes>
- </BrowserRouter>
-    </div>
-    <MovieDetails />
-
+      <div>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<NavBar />}>
+              <Route index element={<Home setSelectedMovie={setSelectedMovie}/>} />
+              <Route
+                path="about"
+                element={<About />}
+              />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+     
+      <MovieDetails
+        movie={selectedMovie}
+        isOpen={!!selectedMovie}
+        onClose={() => setSelectedMovie(null)}
+      />
     </>
-
-
   );
 }
 
