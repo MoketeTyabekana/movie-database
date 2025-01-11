@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { AiOutlineClose} from 'react-icons/ai';
 
+
+// Movie deatils modal component that takes three props, and handles the display of the movie deatils.
 const MovieDetails = ({ movie, isOpen, onClose}) => {
   if (!isOpen) return null;
 
@@ -42,6 +44,12 @@ const MovieDetails = ({ movie, isOpen, onClose}) => {
     </div>
   );
 };
+
+// Required fields
+// Expected prop types ,and movie details object
+// Movie object that represents the movie details 
+// A boolean that indicates whether the movie details modal is open or closed.
+//A funtion that handles the closing of the movie details modal.
 
 MovieDetails.propTypes = {
   movie: PropTypes.object.isRequired,

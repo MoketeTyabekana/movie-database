@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import React from "react";
 
+// Footer component that consists of a copy right message and social media icons from react icons.
 export default function FooterContainer() {
   return (
     <footer className="bg-black text-white py-8 px-4 flex-auto  mx-auto p-5 border-t-2 border-gray-900">
