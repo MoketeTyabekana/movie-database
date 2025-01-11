@@ -88,11 +88,11 @@ function Home({ setSelectedMovie }) {
   // with a background-gradient image, a form that has a text input and submit button.
   return (
     <>
-      <div className="min-h-screen flex flex-col  items-center justify-center px-4 pt-10  bg-custom-gradient">
-        <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-8 mt-20 pt-10 pb-10 w-2/5 ">
-          <div className="flex justify-center mb-5 border-b-2 border-gray-100 p-10 space-x-3 items-center">
-            <img src={icon} alt="Logo" className=" lg:w-10 sm:w-6" />
-            <h1 className="text-white font-bold lg:text-5xl md:text-3xl">
+      <div className="min-h-screen flex flex-col  items-center justify-center px-4  pt-10  bg-custom-gradient">
+        <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-8 mt-20  lg:w-2/5 sm:w-full">
+          <div className="flex sm:flex-row justify-center mb-5 border-b-2 border-gray-100 p-10 space-x-3 items-center">
+            <img src={icon} alt="Logo" className=" w-10" />
+            <h1 className="text-white font-bold lg:text-5xl md:text-3xl ">
               <span className="text-orange-400">EMT</span>Movies
             </h1>
           </div>

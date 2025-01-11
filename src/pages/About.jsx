@@ -1,10 +1,10 @@
 import React from "react";
+import banner from '../assets/banner.jpg'
 
 // The about page using components to display inofromation abaout the site and resources that were used during the development.
 // Image Banner
 // About heading
 // About textx content
-
 function About() {
   return (
     <div className="min-h-screen it w-full bg-custom-gradient sm:p-10 lg:pt-40 lg:pb-20 lg:px-20  sm:pt-20 sm:pb-10 sm:px-10">
@@ -12,7 +12,7 @@ function About() {
        
         <div className="  ">
           <img
-            src="https://w.wallhaven.cc/full/0w/wallhaven-0w2de6.jpg"
+            src={banner}
             alt="Profile"
             className="w-full h-64 object-cover overflow-hidden "
           />
