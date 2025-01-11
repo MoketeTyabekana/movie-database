@@ -12,7 +12,7 @@ function Home({ setSelectedMovie }) {
   const [error, setError] = useState(null);
 
   // Defined the API key.
-  const API_KEY = 7d079508;
+  const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
 //  A funtion that handles the movie search, which is called when the search form is submitted
   const searchMovies = async (e) => {
