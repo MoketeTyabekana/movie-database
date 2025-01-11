@@ -64,28 +64,8 @@ The **Movie Database Application** is a frontend web application designed to pro
 - Deploy the application on platforms like **Netlify** or **Vercel**.
 - Ensure optimal performance and accessibility in the production environment.
 
----
-
-## Stretch Goals (Optional)
-### Favorites List
-- Allow users to save favorite movies locally using **localStorage**.
-
 ### Pagination for Search Results
 - Implement pagination to handle large datasets efficiently.
-
-### Sorting and Filtering
-- Add options to sort results (e.g., by release date, ratings) and filter by genre or year.
-
-### Movie Trailers
-- Include a section for trailers (e.g., embedded YouTube videos).
-
-### Theme Customization
-- Enable light/dark mode for better user experience.
-
-### Internationalization
-- Support multiple languages for movie details.
-
----
 
 ## How to Run the Project
 ### Prerequisites
@@ -108,24 +88,14 @@ The **Movie Database Application** is a frontend web application designed to pro
    ```bash
    npm run dev
    ```
-5. Open the application in your browser at `http://localhost:3000`.
+5. Open the application in your browser at https://emtmovies.vercel.app/
 
 ### Deployment
 - Build the project:
   ```bash
   npm run build
   ```
-- Deploy using **Netlify**, **Vercel**, or similar platforms.
-
----
-
-## Contributions
-Contributions are welcome! Feel free to submit issues or pull requests to improve the application.
-
----
-
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+- Deploy using  **Vercel** platforms.
 
 ---
 
