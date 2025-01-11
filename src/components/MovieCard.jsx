@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
+// movie card compontent taking movie and onclick prop.
+// An image,title,rating,release date inputs that handles the front view of the data from the API.
 const MovieCard = ({ movie, onClick }) => {
   return (
     <div 
@@ -28,6 +29,9 @@ const MovieCard = ({ movie, onClick }) => {
   );
 };
 
+// Required fields
+// Expected prop types, movie object and the on click funtion that handles the click events on the movie card.
+// Four string fields that are required for accessing the data from the API.
 MovieCard.propTypes = {
   movie: PropTypes.shape({
     Poster: PropTypes.string.isRequired,

@@ -5,22 +5,28 @@ import icon from "../assets/icon.png";
 import MovieGrid from "../components/MovieGrid";
 
 function Home({ setSelectedMovie }) {
+  // Defined the useState of the search,movies,loading state and error handling.
   const [searchQuery, setSearchQuery] = useState("");
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // Defined the API key.
   const API_KEY = import.meta.env.VITE_OMDB_API_KEY;
 
-  // Search
+//  A funtion that handles the movie search, which is called when the search form is submitted
   const searchMovies = async (e) => {
+    // A method that prevents the default submission of the form.
     e.preventDefault();
     if (!searchQuery.trim()) return;
 
     setLoading(true);
     setError(null);
 
+
+   
     try {
+       // Fetches the list of movies from the API that are similar to the user input.
       const response = await fetch(
         `https://www.omdbapi.com/?s=${encodeURIComponent(
           searchQuery
@@ -28,6 +34,7 @@ function Home({ setSelectedMovie }) {
       );
       const data = await response.json();
 
+      // Validation statement that checks if the data was fetched from the API.
       if (data.Response === "True") {
         const detailedMovies = await Promise.all(
           data.Search.map(async (movie) => {
@@ -37,16 +44,19 @@ function Home({ setSelectedMovie }) {
             return await detailResponse.json();
           })
         );
+
         setMovies(detailedMovies);
-      } else {
+      }
+       else {
         const words = searchQuery.split(" ");
         const similarResponse = await fetch(
           `https://www.omdbapi.com/?s=${encodeURIComponent(
             words[0]
           )}&apikey=${API_KEY}`
         );
-        const similarMovies = await similarResponse.json();
 
+        const similarMovies = await similarResponse.json();
+      //  A validation statement that checks if similar movies we found from the API.
         if (similarMovies.Response === "True") {
           const similarMovies = await Promise.all(
             similarMovies.Search.map(async (movie) => {
@@ -57,18 +67,25 @@ function Home({ setSelectedMovie }) {
             })
           );
           setMovies(similarMovies);
-        } else {
-          setError("No movies found. Try a different search term.");
+        }
+        else {
+          setError("No Movies Were Found, Please try Again.");
         }
       }
+
+      // Catch for handling errors that are faced during the fetching of the data from the API
     } catch (e) {
-      setError("An error occurred while fetching movies. Please try again.");
+      setError("There Was An Error, Please Try Again");
       console.error(e);
-    } finally {
+    } 
+    finally {
       setLoading(false);
     }
   };
 
+
+  // Frontend design component that handles the view of how the home page search form and background will look
+  // with a background-gradient image, a form that has a text input and submit button.
   return (
     <>
       <div className="min-h-screen flex flex-col  items-center justify-center px-4 pt-10  bg-custom-gradient">
@@ -132,6 +149,8 @@ function Home({ setSelectedMovie }) {
   );
 }
 
+// A required function that handles the on click event of the movie that has been clicked by the user,
+//  which calls the movies details modal to display.
 Home.propTypes = {
   setSelectedMovie: PropTypes.func.isRequired,
 };
