@@ -7,13 +7,14 @@ import {
 } from "react-icons/fa";
 import React from "react";
 
+
 export default function FooterContainer() {
   return (
     <footer className="bg-black text-white py-8 px-4 sm:flex-auto  mx-auto p-5 border-t-2 border-gray-900">
      
         <div className=" lg:pl-20 lg:pr-20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4  lg:block  gap-5 items-center sm:block ">
+            <div className=" mb-4  lg:block  gap-5 items-center sm:block ">
               <p className="md:text-left  sm:text-center">EMTMovies©2024</p>
               <p className="text-sm">
                 Developed By :{" "}
