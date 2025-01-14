@@ -51,7 +51,7 @@ setMenuOpen(!menuOpen);
           </button>
 
           {/* Naviagtion bar link */}
-          <div  className="hidine w-full md:block md:w-auto" id="navbar-default">
+          <div  className="sm:hidden w-full md:block md:w-auto" id="navbar-default ">
             <ul className="font-medium flex flex-col  md:p-0 mt-4 md:flex-row md:space-x-8 ">
               <li>
                 <Link
