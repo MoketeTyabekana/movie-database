@@ -30,11 +30,11 @@ setMenuOpen(!menuOpen);
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-orange-400 dark:focus:ring-gray-600"
+            className="inline-flex items-center p-1 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-200 text-orange-400 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
             
             aria-label="Toggle navigation menu"
-            // An on click method that handles the click event of the
+            // An on click method that handles the click event of the button function.
             onClick={toggleMenu}
           >
             <svg

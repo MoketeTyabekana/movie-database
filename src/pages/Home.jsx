@@ -88,7 +88,7 @@ function Home({ setSelectedMovie }) {
   // with a background-gradient image, a form that has a text input and submit button.
   return (
     <>
-      <div className="min-h-screen flex flex-col  items-center justify-center px-4  pt-10  bg-custom-gradient">
+      <div className="min-h-screen flex flex-col  items-center justify-center md:px-4 lg:px-8 sm:px-2  pt-10  bg-custom-gradient">
         <div className="bg-white-400 rounded-2xl bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border-2 border-gray-400 border-opacity-10 p-8 mt-20 md:w-full lg:w-3/5 sm:w-full">
           <div className="flex sm:flex-row justify-center mb-5 border-b-2 border-gray-100 p-10 space-x-3 items-center">
             <img src={icon} alt="Logo" className=" w-10" />
@@ -123,14 +123,14 @@ function Home({ setSelectedMovie }) {
         </div>
 
         <div className="mt-12 text-white text-xl ">
-          <h2 className="search-results text-center mb-10 tracking-wider ">
+          <h2 className="search-results text-center mb-10 tracking-wider  md:text-2xl sm:text-xl">
             Your Search Results Will Appear Below
           </h2>
         </div>
 
         {movies.length > 0 && (
-          <div className="mb-8">
-            <h3 className="text-2xl font-bold mb-6 text-white m-10 capitalize sm:text-center">
+          <div className="mb-8 w-full" >
+            <h3 className="md:text-2xl sm:text-xl font-bold mb-6 text-white m-10 capitalize sm:text-center md:m-10 lg:m-20">
               Search Results for :{" "}
               <span className="text-orange-400 ">{searchQuery}</span>
             </h3>
