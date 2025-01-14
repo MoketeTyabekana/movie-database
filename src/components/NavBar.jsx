@@ -11,7 +11,10 @@ const [menuOpen, setMenuOpen] = useState(false);
 const toggleMenu = () => {
 setMenuOpen(!menuOpen);
 };
+
   return (
+
+
     <>
       <nav className="bg-white-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-20 border-b-2 border-gray-400 border-opacity-10 w-screen fixed top-0 left-0 shadow-md z-50">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-5">
@@ -29,7 +32,7 @@ setMenuOpen(!menuOpen);
             type="button"
             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 text-orange-400 dark:focus:ring-gray-600"
             aria-controls="navbar-default"
-            aria-expanded="false"
+            
             aria-label="Toggle navigation menu"
             // An on click method that handles the click event of the
             onClick={toggleMenu}

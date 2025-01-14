@@ -6,6 +6,7 @@ export default {
     extend: {
       screens: {
         sm: {max:'900px'}, 
+        md: {min:'910px'}, 
         lg: {min:'1024px'}, 
       },
       backgroundImage: {

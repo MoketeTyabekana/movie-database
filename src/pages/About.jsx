@@ -7,7 +7,7 @@ import banner from '../assets/banner.jpg'
 // About textx content
 function About() {
   return (
-    <div className="min-h-screen it w-full bg-custom-gradient sm:p-10 lg:pt-40 lg:pb-20 lg:px-20  sm:pt-20 sm:pb-10 sm:px-10">
+    <div className="min-h-screen w-full bg-custom-gradient md:p-10 md:pt-40 sm:p-10 lg:pt-40 lg:pb-20 lg:px-20  sm:pt-20 sm:pb-10 sm:px-10">
       <div className="  p-2 lg:p-10 pt-10">
        
         <div className="  ">
@@ -25,7 +25,7 @@ function About() {
            
             <hr />
             <div className="">
-              <p className="text-gray-50 mb-4 text-justify text-sm md:text-base lg:text-lg xl:text-xl">
+              <p className="text-gray-50 mb-4 text-justify text-sm  md:text-base lg:text-lg xl:text-xl">
                 Greetings from <span className="font-semibold">EMT Movies</span>
                 , your one-stop shop for learning about the film industry!
                 Regardless of your preference for exciting blockbusters,
