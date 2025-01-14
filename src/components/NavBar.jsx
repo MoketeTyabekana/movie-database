@@ -56,7 +56,7 @@ setMenuOpen(!menuOpen);
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3 text-white  hover:text-orange-400 md:bg-transparent md:text-blue-700 md:p-0 dark:text-white"
+                  className="block py-2 px-3 text-white  hover:text-orange-400 md:bg-transparent md:p-0 dark:text-white"
                 >
                   Home
                 </Link>
@@ -64,7 +64,7 @@ setMenuOpen(!menuOpen);
               <li>
                 <Link
                   to="/about"
-                  className="block py-2 px-3 text-white   md:bg-transparent hover:text-orange-400 md:text-blue-700 md:p-0 dark:text-white"
+                  className="block py-2 px-3 text-white   md:bg-transparent hover:text-orange-400 md:p-0 dark:text-white"
                 >
                   About Us
                 </Link>
