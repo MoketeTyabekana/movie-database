@@ -7,7 +7,7 @@ import banner from '../assets/banner.jpg'
 // About textx content
 function About() {
   return (
-    <div className="min-h-screen w-full bg-custom-gradient md:p-10 md:pt-40 sm:p-10 lg:pt-40 lg:pb-20 lg:px-20  sm:pt-20 sm:pb-10 sm:px-10">
+    <div className="min-h-screen w-full bg-custom-gradient md:p-10 md:pt-40 sm:p-10 lg:pt-40 lg:pb-20 lg:px-20  sm:pt-20 sm:pb-10 sm:px-1">
       <div className="  p-2 lg:p-10 pt-10">
        
         <div className="  ">
@@ -17,7 +17,7 @@ function About() {
             className="w-full h-64 object-cover overflow-hidden "
           />
          
-          <div className=" text-black space-y-3  bg-gray-950 lg:p-10 sm:p-7">
+          <div className=" text-black space-y-3  bg-gray-950 lg:p-10 sm:p-3">
             <h1 className="lg:text-3xl md:text-4xl font-bold mb-2 uppercase text-orange-400  ">
               About EMT Movies
             </h1>
