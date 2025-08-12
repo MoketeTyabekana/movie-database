@@ -26,12 +26,12 @@ const MovieCard = ({ movie, onClick }) => {
         
       </div>
       <div className="p-4 flex flex-col space-y-2">
-        <h3 className="text-lg font-bold truncate mb-1 text-orange-400 flex items-center"><BadgeCheck className="text-sm mr-1 w-4 h-4"/>
+        <h3 className="text-lg sm:text-sm font-bold truncate mb-1 text-orange-400 flex items-center"><BadgeCheck className="text-sm mr-1 w-4 h-4"/>
 
 {movie.Title}</h3>
         <div className="flex justify-between text-xs text-white font-bold">
-         <p className="text-lg font-bold truncate mb-1 text-white flex items-center"><Calendar className="text-sm mr-1 w-4 h-4  text-orange-400 "/> {movie.Year}</p>
-       <p className="text-lg font-bold truncate mb-1 text-white flex items-center"><Star className="text-sm mr-1 w-4 h-4 text-orange-400"/>{movie.imdbRating}</p>
+         <p className="text-lg sm:text-sm font-bold truncate mb-1 text-white flex items-center"><Calendar className="text-sm mr-1 w-4 h-4  text-orange-400 "/> {movie.Year}</p>
+       <p className="text-lg sm:text-sm font-bold truncate mb-1 text-white flex items-center"><Star className="text-sm mr-1 w-4 h-4 text-orange-400"/>{movie.imdbRating}</p>
         </div>
       </div>
     </div>
