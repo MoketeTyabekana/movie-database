@@ -21,7 +21,7 @@ const MovieCard = ({ movie, onClick }) => {
         <img
           src={movie.Poster !== "N/A" ? movie.Poster : ""}
           alt={movie.Title}
-          className="w-full h-auto object-cover transition-all duration-300"
+          className="w-full h-full object-cover transition-all duration-300"
         />
         
       </div>

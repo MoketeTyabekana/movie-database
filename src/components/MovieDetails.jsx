@@ -12,9 +12,9 @@ const MovieDetails = ({ movie, isOpen, onClose}) => {
       <div className="bg-gray-900 rounded-lg max-w-3xl w-full relative">
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 text-gray-600 hover:text-orange-400 "
+          className="absolute top-8 right-8 text-white  p-4 rounded-full bg-orange-400/90 "
         >
-          <AiOutlineClose className="w-6 h-6"/>
+          <AiOutlineClose className="w-6 h-6 font-bold"/>
         </button>
         
         <div className="grid grid-cols-1 md:grid-cols-2 items-center  gap-4 p-5">
@@ -22,7 +22,7 @@ const MovieDetails = ({ movie, isOpen, onClose}) => {
             <img
               src={movie.Poster !== "N/A" ? movie.Poster : ""}
               alt={movie.Title}
-              className="w-full md:h-[450px] lg:h-[450px] sm:h-[350px] object-cover rounded-lg"
+              className="w-full h-full object-cover rounded-lg"
             />
             
           </div>
